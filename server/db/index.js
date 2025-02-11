@@ -5,8 +5,12 @@ dotenv.config();  // load the environment variables from .env
 
 //Initialize database
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: process.env.DATABASE_URL.includes("supabase.co") ? { rejectUnauthorized: false } : { rejectUnauthorized: false },  // Required for Supabase connection
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+      rejectUnauthorized: false
+  },
+  keepAlive: true,  // Keeps the connection alive
+  connectionTimeoutMillis: 5000,  // Timeout after 5 seconds if unable to connect
 });
 
 // Test connection

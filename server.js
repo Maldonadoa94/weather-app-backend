@@ -12,9 +12,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || "https://capstone-weather-app-frontend-36306bb68f30.herokuapp.com",
+  origin: process.env.FRONTEND_URL || "https://weather-app-frontend-lx9k.onrender.com",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 
