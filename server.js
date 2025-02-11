@@ -9,10 +9,17 @@ const authRoutes = require('./server/routes/authRoutes');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://weather-app-frontend-lx9k.onrender.com", // Allow frontend origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Allow cookies, authorization headers, etc.
+};
+
+app.use(cors(corsOptions));
+
 app.use(bodyParser.json());
 app.use('/api', weatherRoutes); 
 app.use('/api/auth', authRoutes);
