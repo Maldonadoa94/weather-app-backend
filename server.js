@@ -15,7 +15,6 @@ const corsOptions = {
   origin: process.env.FRONTEND_URL || "https://capstone-weather-app-frontend-36306bb68f30.herokuapp.com",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 
