@@ -11,8 +11,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const corsOptions = {
+  origin: "https://capstone-weather-app-frontend-36306bb68f30.herokuapp.com", // Allow Heroku frontend
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Allow cookies and authentication headers
+};
 
-app.use(cors());
+
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use('/api', weatherRoutes); 
