@@ -6,7 +6,7 @@ dotenv.config();  // load the environment variables from .env
 //Initialize database
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }, // Required for Supabase connection
+    ssl: true, // Required for Supabase connection
 });
 
 // Test connection
