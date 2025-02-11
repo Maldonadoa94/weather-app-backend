@@ -23,7 +23,7 @@ app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
 app.use(bodyParser.json());
 app.use('/api', weatherRoutes); 
-app.use('/api/auth', authRoutes);
+app.use('/api', authRoutes);
 
 
 app.get('/', (req, res) => {
