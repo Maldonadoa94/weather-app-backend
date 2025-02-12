@@ -9,7 +9,7 @@ const authRoutes = require('./server/routes/authRoutes');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 const corsOptions = {
   origin: process.env.FRONTEND_URL || "https://weather-app-frontend-lx9k.onrender.com",
